@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component
 
 @Component
 class SaleValidator(
-        private val itemRepository: ItemRepository,
         private val amazonScraper: AmazonScraper,
         private val asosScraper: AsosScraper,
         private val blueTomatoScraper: BlueTomatoScraper,

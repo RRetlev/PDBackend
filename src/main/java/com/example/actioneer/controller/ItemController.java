@@ -21,8 +21,8 @@ public class ItemController {
     @Autowired
     AmazonScraper amazonScraper;
 
-    @Autowired
-    SaleValidator saleValidator;
+//    @Autowired
+//    SaleValidator saleValidator;
 
 
     @PostMapping("/new")
