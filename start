@@ -1,2 +1,2 @@
-mvn package  && \
+mvn kotlin-maven-plugin:compile package  && \
 java -jar target/*.jar
