@@ -7,8 +7,9 @@ import com.example.actioneer.service.scraper.dedicated.AmazonScraper
 import com.example.actioneer.service.scraper.dedicated.AsosScraper
 import com.example.actioneer.service.scraper.dedicated.BlueTomatoScraper
 import org.springframework.stereotype.Component
+import org.springframework.stereotype.Service
 
-@Component
+@Service
 class SaleValidator(
         private val amazonScraper: AmazonScraper,
         private val asosScraper: AsosScraper,

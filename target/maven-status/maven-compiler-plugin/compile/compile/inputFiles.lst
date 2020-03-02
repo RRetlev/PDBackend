@@ -1,0 +1,11 @@
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/scraper/Scraper.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/scraper/dedicated/BlueTomatoScraper.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/scraper/dedicated/AmazonScraper.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/scraper/dedicated/AliExpressScraper.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/controller/ItemController.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/ItemService.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/email/EmailService.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/model/Item.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/ActioneerApplication.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/service/scraper/dedicated/AsosScraper.java
+/home/user/Documents/actioneer_backend/src/main/java/com/example/actioneer/repository/ItemRepository.java
