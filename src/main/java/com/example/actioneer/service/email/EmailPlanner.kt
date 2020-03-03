@@ -5,14 +5,12 @@ import com.example.actioneer.repository.ItemRepository
 import org.springframework.stereotype.Service
 
 @Service
-class EmailPlanner(
-        private val itemRepository: ItemRepository
-) {
+class EmailPlanner{
 
     /**
      * Orders all the valid urls to their email address
      */
-    fun createEmailMap(items: List<Item>): Map<String, List<String>> {
+    fun createEmailMap(items: List<Item>): HashMap<String, List<String>> {
         val emailPlan = HashMap<String, List<String>>()
         items.map { item ->
             {

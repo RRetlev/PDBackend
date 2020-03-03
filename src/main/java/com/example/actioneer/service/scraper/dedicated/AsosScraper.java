@@ -10,7 +10,7 @@ import java.io.IOException;
 @Component
 public class AsosScraper extends Scraper {
     @Override
-    protected double getPrice(String url) {
+    public double getPrice(String url) {
         double price = 0;
         try {
             Document doc = Jsoup.connect(url)

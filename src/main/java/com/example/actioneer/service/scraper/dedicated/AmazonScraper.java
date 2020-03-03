@@ -3,11 +3,9 @@ package com.example.actioneer.service.scraper.dedicated;
 import com.example.actioneer.service.scraper.Scraper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.Optional;
 
 @Component
 public class AmazonScraper extends Scraper {

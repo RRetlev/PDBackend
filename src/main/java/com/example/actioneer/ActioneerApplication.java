@@ -2,12 +2,16 @@ package com.example.actioneer;
 
 import com.example.actioneer.model.Item;
 import com.example.actioneer.repository.ItemRepository;
+import com.example.actioneer.service.email.EmailPlanner;
+import com.example.actioneer.service.email.EmailService;
+import com.example.actioneer.service.scraper.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 @SpringBootApplication
 @EnableScheduling
@@ -16,12 +20,33 @@ public class ActioneerApplication {
     @Autowired
     ItemRepository itemRepository;
 
+    @Autowired
+    EmailService emailService;
+
+    @Autowired
+    EmailPlanner emailPlanner;
+
+    @Autowired
+    PriceService priceService;
+
     public static void main(String[] args) {
         SpringApplication.run(ActioneerApplication.class, args);
     }
 
+    @Scheduled(cron = "0 0 0 * * *")
+    public void sendEmails() {
+        emailService.sendEmail(
+                emailPlanner.createEmailMap(
+                        priceService.getOnSaleURLS(
+                                itemRepository.findDistinctByURL()
+                        )
+                )
+        );
+    }
+
+
     @Bean
-    public CommandLineRunner init(){
+    public CommandLineRunner init() {
         return args -> {
             Item item = Item.builder()
                     .email("rretlev@gmail.com")
