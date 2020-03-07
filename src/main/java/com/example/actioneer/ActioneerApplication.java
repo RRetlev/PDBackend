@@ -5,6 +5,7 @@ import com.example.actioneer.repository.ItemRepository;
 import com.example.actioneer.service.email.EmailPlanner;
 import com.example.actioneer.service.email.EmailService;
 import com.example.actioneer.service.scraper.PriceService;
+import com.example.actioneer.service.scraper.UrlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,7 +28,7 @@ public class ActioneerApplication {
     EmailPlanner emailPlanner;
 
     @Autowired
-    PriceService priceService;
+    UrlService urlService;
 
     public static void main(String[] args) {
         SpringApplication.run(ActioneerApplication.class, args);
@@ -37,7 +38,7 @@ public class ActioneerApplication {
     public void sendEmails() {
         emailService.sendEmail(
                 emailPlanner.createEmailMap(
-                        priceService.getOnSaleURLS(
+                        urlService.getOnSaleURLS(
                                 itemRepository.findDistinctByURL()
                         )
                 )

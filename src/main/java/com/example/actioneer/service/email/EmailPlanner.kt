@@ -1,7 +1,6 @@
 package com.example.actioneer.service.email
 
 import com.example.actioneer.model.Item
-import com.example.actioneer.repository.ItemRepository
 import org.springframework.stereotype.Service
 
 @Service
