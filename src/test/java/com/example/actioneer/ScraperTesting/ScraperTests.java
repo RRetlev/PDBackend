@@ -1,6 +1,7 @@
-package com.example.actioneer;
+package com.example.actioneer.ScraperTesting;
 
 
+import com.example.actioneer.ActioneerApplication;
 import com.example.actioneer.service.scraper.dedicated.AliExpressScraper;
 import com.example.actioneer.service.scraper.dedicated.AmazonScraper;
 import com.example.actioneer.service.scraper.dedicated.AsosScraper;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
@@ -19,8 +21,9 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 
 
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = ActioneerApplication.class, properties = "spring.main.allow-bean-definition-overriding=true")
 public class ScraperTests {
 
     @Autowired

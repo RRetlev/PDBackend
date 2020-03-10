@@ -14,7 +14,7 @@ public class AmazonScraper extends Scraper {
 
     @Override
     public double getPriceFromFile(Document doc) {
-        return Double.parseDouble( doc.getElementById("priceblock_ourprice").text());
+        return Double.parseDouble(doc.getElementById("priceblock_ourprice").text());
     }
 
 }

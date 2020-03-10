@@ -9,15 +9,7 @@ class EmailPlanner{
     /**
      * Orders all the valid urls to their email address
      */
-    fun createEmailMap(items: List<Item>): HashMap<String, List<String>> {
-        val emailPlan = HashMap<String, List<String>>()
-        items.map { item ->
-            {
-                emailPlan.putIfAbsent(item.email, emptyList())
-                emailPlan.put(item.email, emailPlan[item.email]!!.plus(item.url))
-
-            }
-        }
-        return emailPlan
+    fun createEmailMap(items: List<Item>): Map<String, List<String>> {
+        return items.groupBy { it.email }.mapValues { it.value.map { it.url } }
     }
 }

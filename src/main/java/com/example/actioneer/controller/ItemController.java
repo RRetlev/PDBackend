@@ -13,9 +13,19 @@ public class ItemController {
     @Autowired
     ItemService itemService;
     
-    @PostMapping("/new")
+    @PostMapping("/item")
     public Item saveNewItem(@RequestBody Item item){
         return itemService.addNewItem(item);
+    }
+
+//    @PutMapping("/item")
+//    public Item updateItemPrice(){
+//        return itemService.updateItemPrice();
+//    }
+
+    @DeleteMapping("/item")
+    public Item deleteItem(){
+        return itemService.deleteItem();
     }
 
     @GetMapping("/")

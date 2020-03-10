@@ -14,6 +14,6 @@ public class AliExpressScraper extends Scraper {
 
     @Override
     public double getPriceFromFile(Document doc) {
-        return Double.parseDouble((doc.getElementsByClass("product-price-value").text()).substring(4));
+        return Double.parseDouble((doc.getElementsByClass("product-price-value").get(0).text()).substring(4));
     }
 }

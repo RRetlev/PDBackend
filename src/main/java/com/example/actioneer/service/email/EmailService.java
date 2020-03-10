@@ -15,7 +15,7 @@ public class EmailService {
     private final String username = "capsuleoftimeofcc@gmail.com";
     private final String psw = "Csicsiphp";
 
-    public void sendEmail(HashMap<String, List<String>> emails) {
+    public void sendEmail(Map<String, List<String>> emails) {
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");

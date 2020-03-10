@@ -17,7 +17,12 @@ public class ItemService {
 
 
     public Item addNewItem(Item item){
-        item.setOriginalPrice(priceService.getCurrentPriceOfSingleItem(item));
+        double currentPrice = priceService.getCurrentPriceOfSingleItem(item);
+        System.out.println(item);
         return itemRepository.save(item);
+    }
+
+    public Item deleteItem() {
+        return null;
     }
 }

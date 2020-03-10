@@ -26,7 +26,7 @@ open class PriceService(
             "www.asos.com" -> asosScraper.getPrice(item.url)
             "www.blue-tomato.com" -> blueTomatoScraper.getPrice(item.url)
             "www.aliexpress.com" -> aliExpressScraper.getPrice(item.url)
-            else -> Double.POSITIVE_INFINITY
+            else -> Double.NEGATIVE_INFINITY
         }
     }
 
